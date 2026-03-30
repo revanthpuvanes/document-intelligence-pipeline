@@ -2,6 +2,7 @@
 
 ### Benchmarking OCR vs Vision-Language Models for Structured Document Extraction
 
+<img width="1268" height="343" alt="Screenshot from 2026-03-30 19-38-58" src="https://github.com/user-attachments/assets/c759a069-90af-4faf-91cd-264809f0d7d6" />
 ---
 
 ## 🚀 Overview
@@ -46,6 +47,8 @@ Document → Preprocessing → Extraction → Field Parsing → Evaluation → D
 | ----------------- | ----------------------------------------------- |
 | **Tesseract OCR** | Classical OCR baseline (fast, free)             |
 | **Mistral VLM**   | Vision-language model for structured extraction |
+<img width="614" height="243" alt="Screenshot from 2026-03-30 19-40-25" src="https://github.com/user-attachments/assets/cc7319e9-ed30-4bc3-aff0-cb68532622ba" />
+<img width="614" height="243" alt="Screenshot from 2026-03-30 19-40-06" src="https://github.com/user-attachments/assets/fb25928a-8770-4f59-b423-f3ff0a4907d4" />
 
 ---
 
@@ -100,7 +103,7 @@ document-intelligence-pipeline/
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/your-username/document-intelligence-pipeline.git
+git clone https://github.com/revanthpuvanes/document-intelligence-pipeline.git
 cd document-intelligence-pipeline
 ```
 
@@ -186,7 +189,7 @@ Upload any invoice (image or PDF) and instantly compare:
 * Extracted fields (JSON)
 * Raw OCR output
 * Latency and cost
-
+<img width="1276" height="401" alt="Screenshot from 2026-03-30 19-39-26" src="https://github.com/user-attachments/assets/6052e2a6-8590-46de-b668-2fabc036791b" />
 ---
 
 ## 🔮 Future Improvements
