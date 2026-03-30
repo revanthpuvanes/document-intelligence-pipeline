@@ -1,9 +1,9 @@
+streamlit
 pytesseract
-opencv-python
+opencv-python-headless
 pillow
 pandas
 rapidfuzz
-streamlit
 python-dotenv
 mistralai
 pdf2image

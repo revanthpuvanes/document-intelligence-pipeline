@@ -2,6 +2,7 @@ import os
 import time
 import json
 import base64
+
 from dotenv import load_dotenv
 
 try:
@@ -21,9 +22,32 @@ Extract these fields from the invoice:
 Return ONLY valid JSON.
 """
 
+
+def get_api_key():
+    key = os.getenv("MISTRAL_API_KEY", "")
+    if key:
+        return key
+
+    try:
+        import streamlit as st
+        return st.secrets.get("MISTRAL_API_KEY", "")
+    except Exception:
+        return ""
+
+
 def encode_image(image_path):
     with open(image_path, "rb") as f:
         return base64.b64encode(f.read()).decode("utf-8")
+
+
+def guess_mime_type(image_path):
+    ext = os.path.splitext(image_path)[1].lower()
+    if ext == ".pdf":
+        return "application/pdf"
+    if ext in [".jpg", ".jpeg"]:
+        return "image/jpeg"
+    return "image/png"
+
 
 def parse_json_from_text(text):
     cleaned = text.strip()
@@ -40,6 +64,7 @@ def parse_json_from_text(text):
     except Exception:
         return {}
 
+
 def extract_mistral(image_path):
     start = time.time()
 
@@ -53,7 +78,7 @@ def extract_mistral(image_path):
             "error": "mistralai import failed"
         }
 
-    api_key = os.getenv("MISTRAL_API_KEY", "")
+    api_key = get_api_key()
     if not api_key:
         return {
             "model": "mistral",
@@ -67,8 +92,9 @@ def extract_mistral(image_path):
     try:
         client = Mistral(api_key=api_key)
 
-        image_b64 = encode_image(image_path)
-        image_url = f"data:image/png;base64,{image_b64}"
+        file_b64 = encode_image(image_path)
+        mime_type = guess_mime_type(image_path)
+        file_url = f"data:{mime_type};base64,{file_b64}"
 
         response = client.chat.complete(
             model="pixtral-12b-2409",
@@ -77,7 +103,7 @@ def extract_mistral(image_path):
                     "role": "user",
                     "content": [
                         {"type": "text", "text": PROMPT},
-                        {"type": "image_url", "image_url": image_url},
+                        {"type": "image_url", "image_url": file_url},
                     ],
                 }
             ],
