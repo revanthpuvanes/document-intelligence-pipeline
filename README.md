@@ -1,4 +1,4 @@
-# 📄 Document Intelligence Pipeline
+# 📄 DocAI Benchmark: OCR vs Vision-Language Models (Mistral)
 
 ### Benchmarking OCR vs Vision-Language Models for Structured Document Extraction
 
