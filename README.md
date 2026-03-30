@@ -2,7 +2,8 @@
 
 ### Benchmarking OCR vs Vision-Language Models for Structured Document Extraction
 
-<img width="1268" height="343" alt="Screenshot from 2026-03-30 19-38-58" src="https://github.com/user-attachments/assets/c759a069-90af-4faf-91cd-264809f0d7d6" />
+<img width="896" height="425" alt="Screenshot from 2026-03-30 20-35-53" src="https://github.com/user-attachments/assets/a0407d6c-610c-4161-9c48-8b75e170fde4" />
+
 ---
 
 ## 🚀 Overview
