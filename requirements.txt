@@ -1,0 +1,9 @@
+pytesseract
+opencv-python
+pillow
+pandas
+rapidfuzz
+streamlit
+python-dotenv
+mistralai
+pdf2image
