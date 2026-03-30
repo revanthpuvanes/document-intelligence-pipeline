@@ -17,9 +17,6 @@ outputs/
 *.csv
 *.json
 
-# 📁 Data (optional — keep if large/private)
-data/sample_docs/
-data/processed/
 
 # 🧪 Jupyter notebooks checkpoints
 .ipynb_checkpoints/
